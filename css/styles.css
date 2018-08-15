@@ -30,13 +30,16 @@ li {
   color: #333;
 }
 
-a {
+a,
+.inside .breadcrumb li a {
   color: #fdfdfd;
   text-decoration: none;
 }
 
 a:hover,
-a:focus {
+a:focus,
+.inside .breadcrumb li a:hover,
+.inside .breadcrumb li a:focus {
   color: #3397db;
   text-decoration: none;
 }
@@ -150,13 +153,14 @@ a.skip-main:active {
 
 .breadcrumb li {
   display: inline;
+  color: #fcfcfc;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
 
 .breadcrumb li+li:before {
   padding: 8px;
-  color: black;
+  color: #fdfdfd;
   content: "/\00a0";
 }
 

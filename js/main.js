@@ -106,7 +106,6 @@ initMap = () => {
   updateRestaurants();
 }
 
-
 /**
  * Update page and map for current restaurants.
  */
@@ -168,7 +167,7 @@ createRestaurantHTML = (restaurant) => {
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   // add alt attribute to image tag
-  image.alt = restaurant.name;
+  image.alt = `image of ${restaurant.name} Restaurant`;
   li.append(image);
 
   const name = document.createElement('h2');
@@ -206,14 +205,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
-
