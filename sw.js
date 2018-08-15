@@ -39,7 +39,7 @@ self.addEventListener('install', event => {
 */
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request, { ignoreSearch: true }).then(response => {
       return response || fetch(event.request).then(res => {
         return caches.open(staticCacheName).then(cache => {
           cache.put(event.request, res.clone());
